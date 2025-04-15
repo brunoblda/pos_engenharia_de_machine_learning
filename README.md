@@ -127,7 +127,7 @@ kedro run
 
 Aguarde a execução dos pipelines, demorou em torno de 7 minutos
 
-![tempo médio de execução dos pipelines](data\08_reporting\tempo_medio_de_execucao.png)
+![tempo médio de execução dos pipelines](data/08_reporting/tempo_medio_de_execucao.png)
 
 
 ## 2.5 Servir o modelo
@@ -189,7 +189,7 @@ Para começar o desenvolvimento, desenhe um diagrama que demonstra todas as etap
 
 R:
 
-![Diagrama Kobe project](data\08_reporting\diagrama_kobe_project_img.png)
+![Diagrama Kobe project](data/08_reporting/diagrama_kobe_project_img.png)
 
 3. Como as ferramentas Streamlit, MLFlow, PyCaret e Scikit-Learn auxiliam na construção dos pipelines descritos anteriormente? A resposta deve abranger os seguintes aspectos:
 - a. Rastreamento de experimentos;
@@ -379,19 +379,19 @@ memory usage: 332.8 KB
 
 Modelo de treinado com os dados do 05_input_model - dataset_kobe_train_dev.parquet, com a função compare_models do pycaret, trazendo o modelo que saiu melhor no treinamento
 
-![best_model params and metrics](data\08_reporting\best_model.png)
+![best_model params and metrics](data/08_reporting/best_model.png)
 
 ### logistic_model
 
 Modelo de regressão logistica treinado com os dados do 05_input_model - dataset_kobe_train_dev.parquet
 
-![Logistic_model params and metrics](data\08_reporting\logistic_model.png)
+![Logistic_model params and metrics](data/08_reporting/logistic_model.png)
 
 ### tree_model
 
 Modelo de arvore de decisão treinado com os dados do 05_input_model - dataset_kobe_train_dev.parquet
 
-![tree_model params and metrics](data\08_reporting\tree_model.png)
+![tree_model params and metrics](data/08_reporting/tree_model.png)
 
 
 ## 08_reporting
@@ -422,7 +422,7 @@ memory usage: 216.7 KB
 
 Foi escolhido o modelo de regressão logistica para realizar a predição dos dados de produção 02_intermediate - dataset_kobe_prod.parquet.
 
-![production_model params and metrics](data\08_reporting\production_model.png)
+![production_model params and metrics](data/08_reporting/production_model.png)
 
 5. Implemente o pipeline de processamento de dados com o mlflow, rodada (run) com o nome "PreparacaoDados":
 Os dados devem estar localizados em "/data/raw/dataset_kobe_dev.parquet" e "/data/raw/dataset_kobe_prod.parquet" 
@@ -466,7 +466,7 @@ Essas práticas tornam o processo de modelagem mais robusto e confiável, aument
 
 Registro no Mlflow do parâmetro de porcentagem de teste e das métricas de tamanho do dataset de treino e do dataset de teste.
 
-![Params and Metrics from train and test dataset](data\08_reporting\parametros_e_metrica_treino_e_test.png)
+![Params and Metrics from train and test dataset](data/08_reporting/parametros_e_metrica_treino_e_test.png)
 
 6. Implementar o pipeline de treinamento do modelo com o MlFlow usando o nome "Treinamento"
 - a. Com os dados separados para treinamento, treine um modelo com regressão logística do sklearn usando a biblioteca pyCaret.
@@ -477,7 +477,7 @@ Registro no Mlflow do parâmetro de porcentagem de teste e das métricas de tama
 
 R:
 
-![Models evaluation](data\08_reporting\models_evaluation.png)
+![Models evaluation](data/08_reporting/models_evaluation.png)
 
 | Modelo                   | Log Loss   | F1 Score |
 |--------------------------|------------|----------|
@@ -514,32 +514,32 @@ O modelo teve um resultado de 0 para F1 Score, indicando que não acertou nenhum
 
 ### Mlflow
 
-![predict data prod mlfow](data\08_reporting\predict_data_prod_mlflow.png)
+![predict data prod mlfow](data/08_reporting/predict_data_prod_mlflow.png)
 
 ### Streamlit
 
-![predict data prod streamlit](data\08_reporting\predict_data_prod_streamlit.png)
+![predict data prod streamlit](data/08_reporting/predict_data_prod_streamlit.png)
 
 
-![predict data prod streamlit confusion matrix](data\08_reporting\predict_data_prod_streamlit_confusion_matrix.png)
+![predict data prod streamlit confusion matrix](data/08_reporting/predict_data_prod_streamlit_confusion_matrix.png)
 
 
-![predict data prod streamlit positve class distribution](data\08_reporting\predict_data_prod_streamlit_positive_class.png)
+![predict data prod streamlit positve class distribution](data/08_reporting/predict_data_prod_streamlit_positive_class.png)
 
 
 8. Implemente um dashboard de monitoramento da operação usando Streamlit.
 
 ### Model monitoring
 
-![streamlit model monitoring](data\08_reporting\streamlit_model_monitoring.png)
+![streamlit model monitoring](data/08_reporting/streamlit_model_monitoring.png)
 
-[Streamlit model monitoring](data\08_reporting\Monitoramento_do_modelo.pdf)
+[Streamlit model monitoring](data/08_reporting/Monitoramento_do_modelo.pdf)
 
 ### Manual prediction
 
-![streamlit model monitoring](data\08_reporting\streamlit_model_monitoring_manual_prediction.png)
+![streamlit model monitoring](data/08_reporting/streamlit_model_monitoring_manual_prediction.png)
 
 
-[Streamlit model monitoring - manual prediction](data\08_reporting\monitoramento_do_modelo_predicao_manual.pdf)
+[Streamlit model monitoring - manual prediction](data/08_reporting/monitoramento_do_modelo_predicao_manual.pdf)
 
 
