@@ -179,9 +179,13 @@ Para realizar a predição manual de valores das features, clicar na aba "Predi�
 
 # 3. Resolução da questões
 
+# Questão 1
+
 1. A solução criada nesse projeto deve ser disponibilizada em repositório git e disponibilizada em servidor de repositórios (Github (recomendado), Bitbucket ou Gitlab). O projeto deve obedecer o Framework TDSP da Microsoft (estrutura de arquivos, arquivo requirements.txt e arquivo README - com as respostas pedidas nesse projeto, além de outras informações pertinentes). Todos os artefatos produzidos deverão conter informações referentes a esse projeto (não serão aceitos documentos vazios ou fora de contexto). Escreva o link para seu repositório. 
 
-R:
+R: https://github.com/brunoblda/pos_engenharia_de_machine_learning
+
+# Questão 2
 
 2. Iremos desenvolver um preditor de arremessos usando duas abordagens (regressão e classificação) para prever se o "Black Mamba" (apelido de Kobe) acertou ou errou a cesta.
 Baixe os dados de desenvolvimento e produção aqui (datasets: dataset_kobe_dev.parquet e dataset_kobe_prod.parquet). Salve-os numa pasta /data/raw na raiz do seu repositório.
@@ -190,6 +194,8 @@ Para começar o desenvolvimento, desenhe um diagrama que demonstra todas as etap
 R:
 
 ![Diagrama Kobe project](data/08_reporting/diagrama_kobe_project_img.png)
+
+# Questão 3
 
 3. Como as ferramentas Streamlit, MLFlow, PyCaret e Scikit-Learn auxiliam na construção dos pipelines descritos anteriormente? A resposta deve abranger os seguintes aspectos:
 - a. Rastreamento de experimentos;
@@ -213,6 +219,8 @@ A atualização de modelo pode ser realizada com facilidade, pois os pipelines s
 Por fim, no que diz respeito ao provisionamento, o modelo final é servido por meio do MLflow usando o endpoint REST /invocations. O Streamlit se conecta a esse endpoint para enviar dados e obter predições em tempo real. Isso possibilita o uso do modelo tanto via interface quanto via API, promovendo integração com aplicações reais.
 
 Em conjunto, essas ferramentas tornam o processo completo — da experimentação à operação — eficiente, rastreável e pronto para produção.
+
+# Questão 4
 
 4. Com base no diagrama realizado na questão 2, aponte os artefatos que serão criados ao longo de um projeto. Para cada artefato, a descrição detalhada de sua composição.
 
@@ -424,6 +432,8 @@ Foi escolhido o modelo de regressão logistica para realizar a predição dos da
 
 ![production_model params and metrics](data/08_reporting/production_model.png)
 
+# Questão 5
+
 5. Implemente o pipeline de processamento de dados com o mlflow, rodada (run) com o nome "PreparacaoDados":
 Os dados devem estar localizados em "/data/raw/dataset_kobe_dev.parquet" e "/data/raw/dataset_kobe_prod.parquet" 
 Observe que há dados faltantes na base de dados! As linhas que possuem dados faltantes devem ser desconsideradas. Para esse exercício serão apenas consideradas as colunas: 
@@ -442,7 +452,7 @@ Observe que há dados faltantes na base de dados! As linhas que possuem dados fa
 
 R:
 
-## vii.
+### vii.
 
 A separação dos dados em treino (80%) e teste (20%), utilizando uma divisão aleatória e estratificada, é uma etapa fundamental no processo de desenvolvimento de modelos de machine learning. A estratificação garante que a proporção das classes da variável "target" seja mantida nos conjuntos de dados, o que evita distorções e permite uma avaliação mais confiável da performance do modelo.
 
@@ -462,11 +472,13 @@ Para minimizar os efeitos de viés de dados, podemos utilizar de algumas estrat�
 
 Essas práticas tornam o processo de modelagem mais robusto e confiável, aumentando a capacidade de generalização do modelo em novos dados.
 
-# viii.
+### viii.
 
 Registro no Mlflow do parâmetro de porcentagem de teste e das métricas de tamanho do dataset de treino e do dataset de teste.
 
 ![Params and Metrics from train and test dataset](data/08_reporting/parametros_e_metrica_treino_e_test.png)
+
+# Questão 6
 
 6. Implementar o pipeline de treinamento do modelo com o MlFlow usando o nome "Treinamento"
 - a. Com os dados separados para treinamento, treine um modelo com regressão logística do sklearn usando a biblioteca pyCaret.
@@ -499,6 +511,8 @@ O F1 Score é uma métrica que equilibra a precisão e o recall, um valor mais a
 
 Dessa forma, foi o modelo de regressão logistica foi escolhido para finalização.
 
+# Questão 7
+
 7. Registre o modelo de classificação e o sirva através do MLFlow (ou como uma API local, ou embarcando o modelo na aplicação). Desenvolva um pipeline de aplicação (aplicacao.py) para carregar a base de produção (/data/raw/dataset_kobe_prod.parquet) e aplicar o modelo. Nomeie a rodada (run) do mlflow como “PipelineAplicacao” e publique, tanto uma tabela com os resultados obtidos (artefato como .parquet), quanto log as métricas do novo log loss e f1_score do modelo.
 - a. O modelo é aderente a essa nova base? O que mudou entre uma base e outra? Justifique.
 - b. Descreva como podemos monitorar a saúde do modelo no cenário com e sem a disponibilidade da variável resposta para o modelo em operação.
@@ -526,6 +540,7 @@ O modelo teve um resultado de 0 para F1 Score, indicando que não acertou nenhum
 
 ![predict data prod streamlit positve class distribution](data/08_reporting/predict_data_prod_streamlit_positive_class.png)
 
+# Questão 8
 
 8. Implemente um dashboard de monitoramento da operação usando Streamlit.
 
